@@ -19,3 +19,15 @@ def connect_to_sqlite(dbname):
     #create the connection to the database
     conn = lite.connect(dbname)
     return conn
+
+def insert_to_countries1(nam, pop, are, p_90, p_00, p_10, fert, life, cont_id):
+    s = '''INSERT INTO  countries (country_name, population, area, gdp_1990, gdp_2000, 
+           gdp_2010, fertility, life_exp, continent_id) 
+           VALUES ('%s',%s, %s, %s, %s, %s, %s, %s, %s);
+        '''  % (nam, pop, are, p_90, p_00, p_10, fert, life, cont_id)
+    return s
+
+s = '''INSERT INTO  countries (country_name, population, area, gdp_1990, gdp_2000, gdp_2010, fertility, life_exp, continent_id) 
+       VALUES (:nam, :pop, :are, :p_90, :p_00, :p_10, :fert, :life, :cont_id);
+    '''     	
+    
