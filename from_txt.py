@@ -1,3 +1,4 @@
+#! /usr/bin/python
 #from_txt.py
 import functions as func
 
